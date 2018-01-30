@@ -4,9 +4,12 @@
 
 <c:choose>
 	<c:when test="${reportData ne null }">
-		<table border="1" width="100" height="200" style="color: red"
+		<table border="2" width="100" height="200" style="color: red"
 			bgcolor="cyan">
+
 			<tr>
+
+				<th>select</th>
 				<th>EMPNO</th>
 				<th>ENAME</th>
 				<th>JOB</th>
@@ -14,10 +17,14 @@
 			</tr>
 			<c:forEach var="dto" items="${reportData}">
 				<tr>
+
 					<td>${dto.empno}</td>
 					<td>${dto.ename}</td>
 					<td>${dto.job}</td>
 					<td>${dto.sal}</td>
+					<td><a href="edit_student.htm?empno=${dto.empno}">edit</a></td>
+					<td><a href="delete_student.htm?empno=${dto.empno}">delete</a></td>
+					<td><a href="delete_student.htm?empno=${dto.empno}">Update</a></td>
 				</tr>
 			</c:forEach>
 		</table>

@@ -26,7 +26,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 		rowCount=Projections.rowCount();
 		criteria.setProjection(rowCount);
 		list=criteria.list();
-		System.out.println(list.get(0).getClass());
+		//System.out.println(list.get(0).getClass());
 		empsCount=(long) list.get(0);
 		return empsCount;
 	}//method
