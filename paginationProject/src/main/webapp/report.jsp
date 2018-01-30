@@ -9,7 +9,6 @@
 
 			<tr>
 
-				<th>select</th>
 				<th>EMPNO</th>
 				<th>ENAME</th>
 				<th>JOB</th>
