@@ -9,6 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.rd.hibernate.SpringHibernate.entity.Course;
@@ -22,11 +23,14 @@ public class CourseRepositoryTest {
 
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-	/*
-	 * @Test public void findById() { Course course =
-	 * repository.getCourseById(1001); assertEquals(1002, course.getId()); }
-	 */
 	@Test
+	public void findById() {
+		Course course = repository.getCourseById(1002);
+		assertEquals(1002, course.getId());
+	}
+
+	@Test
+	@DirtiesContext
 	public void deleteById() {
 		repository.deletById(1002);
 		assertNull(repository.getCourseById(1002));
