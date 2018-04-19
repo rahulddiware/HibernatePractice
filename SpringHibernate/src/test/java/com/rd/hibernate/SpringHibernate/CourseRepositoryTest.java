@@ -31,7 +31,8 @@ public class CourseRepositoryTest {
 
 	@Test
 	@DirtiesContext
-	public void deleteById() {
+	//dirtiesContext Done here
+	public void deleteUsingId() {
 		repository.deletById(1002);
 		assertNull(repository.getCourseById(1002));
 	}
