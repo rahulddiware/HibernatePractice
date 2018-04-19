@@ -24,6 +24,8 @@ public class SpringHibernateApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		Course course = courseRepository.getCourseById(1001);
 		logger.info("course{}->", course);
+		courseRepository.deletById(1001);
+		logger.info("course deleted{}-->", course);
 
 	}
 }

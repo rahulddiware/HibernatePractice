@@ -1,6 +1,7 @@
 package com.rd.hibernate.SpringHibernate;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -21,10 +22,14 @@ public class CourseRepositoryTest {
 
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 
+	/*
+	 * @Test public void findById() { Course course =
+	 * repository.getCourseById(1001); assertEquals(1002, course.getId()); }
+	 */
 	@Test
-	public void findById() {
-		Course course = repository.getCourseById(1001);
-		assertEquals(1001, course.getId());
+	public void deleteById() {
+		repository.deletById(1002);
+		assertNull(repository.getCourseById(1002));
 	}
 
 }
